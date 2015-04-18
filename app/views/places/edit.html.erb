@@ -1,0 +1,19 @@
+<h1>Places#edit</h1>
+<p>Find me in app/views/places/edit.html.erb</p>
+
+<%= form_for @place, method: :patch do |p|%>
+<!-- Creating form for my new place do |p|  -->
+	<%= p.label :title, "Title" %>
+	<%= p.text_field :title, value: @place.title %>
+	<%= p.label :description, "Describe the Place" %>
+	<%= p.text_area :description, value: @place.description %>
+	<%= p.label :url, "Website" %>
+	<%= p.text_field :url, value: @place.url %> 
+	<%= p.label :lat %>
+	<%= p.text_field :lat, value: @place.lat %>
+	<%= p.label :long %>
+	<%= p.text_field :long, value: @place.long%>
+	<%= p.check_box :completed, value: @place.completed%>
+	<%= p.label :completed, "Completed?" %>
+	<%= p.submit "Save!" %>
+<% end %>

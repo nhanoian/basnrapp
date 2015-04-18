@@ -1,0 +1,13 @@
+<h1>Places#index</h1>
+<p>Find me in app/views/places/index.html.erb</p>
+<ul>
+	<% @places.each do |p| %>
+	<li> <%= p.title %> </li>
+		<ul>
+		<li> <%= p.description %> </li>
+		<li> <%= p.completed %> </li>
+		</ul>
+		<%= link_to "Edit", edit_place_path(p) %>
+	<br>
+	<% end %>
+</ul>

@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  get 'places/index'
+  root "places#index" # "#" is method
+  
+  # gives rails-predefined CRUD routes (rails helper) run rake:routes to view all defined routes
+  resources :places
+
+  get 'places/new' => "places#new" 
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

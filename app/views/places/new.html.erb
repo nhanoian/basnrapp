@@ -1,0 +1,33 @@
+<h1>Places#new</h1>
+<p>Find me in app/views/places/new.html.erb</p>
+<% if @notice %>
+	<h2><%= @notice %></h2>
+<% end %>
+<p>Create a new place!</p>
+<!-- Making a form here! -->
+<%= form_for @place, method: :post do |p|%>
+<!-- Creating form for my new place do |p|  -->
+	<%= p.label :title, "Title"%>
+	<%= p.text_field :title , id: "form-title" %>
+	<%= p.label :description, "Describe the Place"%>
+	<%= p.text_area :description, id: 'form-description'  %>
+	<%= p.label :url, "Website" %>
+	<%= p.text_field :url %> 
+	<%= p.label :lat %>
+	<%= p.text_field :lat %>
+	<%= p.label :long %>
+	<%= p.text_field :long%>
+	<%= p.submit "Make a Place!!!" %>
+<% end %>
+
+<script>
+	var autocomplete = new google.maps.places.Autocomplete(document.getElementById('form-title'))
+
+ $('#form-title').on('keyup', function(){
+ 	var title = document.getElementById('form-title');
+ 	var description = document.getElementById('form-description');
+ 	var input = title.value; 
+ 	
+
+ })
+</script>
